@@ -12,9 +12,10 @@ import { withNavigation } from "react-navigation";
 import { scale } from "../../helpers/scale";
 import { Color } from "../../helpers/colors";
 import { Icons } from "../../assets/icons/index";
+import { text } from "../../components/const";
 
 // Make a component
-class Header extends React.Component {
+class FavouriteHeader extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -33,7 +34,7 @@ class Header extends React.Component {
               alignItems: "center"
             }}
           >
-            <Text style={styles.textStyle}>Favourites</Text>;
+            <Text style={styles.textStyle}>{text.favouriteTitle}</Text>
           </View>
 
           <View>
@@ -42,7 +43,7 @@ class Header extends React.Component {
                 onPress={() => this.props.navigation.navigate("Filter")}
               >
                 <Image
-                  source={Icon.filterIcon}
+                  source={Icons.filterIcon}
                   style={{
                     height: 22,
                     width: 22
@@ -119,4 +120,4 @@ const styles = StyleSheet.create({
 });
 
 // Make the component available to the other parts of the App
-export default withNavigation(Header);
+export default withNavigation(FavouriteHeader);

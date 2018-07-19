@@ -4,6 +4,7 @@ import FeedbackHeader from "../../components/headers/feedbackheader";
 import { scale } from "../../helpers/scale";
 import { Icons } from "../../assets/icons/index";
 import { Color } from "../../helpers/colors";
+import {text} from "../../components/const";
 
 export default class FeedBackScreen extends React.Component {
   static navigationOptions = {
@@ -21,7 +22,9 @@ export default class FeedBackScreen extends React.Component {
         <View>
           <FeedbackHeader />
         </View>
-        <Text style={styles.text}>Write your feedback</Text>
+        <View>
+          <Text style={styles.text}>{text.writeyourfeedback}</Text>
+        </View>
         <View style={{ marginTop: scale(15) }}>
           <TextInput
             style={styles.textadd}

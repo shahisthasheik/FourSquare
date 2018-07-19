@@ -5,6 +5,7 @@ import { withNavigation } from "react-navigation";
 import { scale } from "../../helpers/scale";
 import { Color } from "../../helpers/colors";
 import { Icons } from "../../assets/icons/index";
+import { text } from "../../components/const";
 
 // Make a component
 class AboutusHeader extends React.Component {
@@ -24,7 +25,8 @@ class AboutusHeader extends React.Component {
             alignItems: "center"
           }}
         >
-          <Text style={styles.textStyle}>About us</Text>;
+          <Text style={styles.textStyle}>{text.aboutusTitle}</Text>
+          {/* <View>{/* <Text>Aboutus</Text>; */}
         </View>
         <View>
           <View style={styles.filter}>

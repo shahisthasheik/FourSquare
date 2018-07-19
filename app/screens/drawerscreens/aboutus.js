@@ -6,7 +6,7 @@ import { Icons } from "../../assets/icons/index";
 
 export default class AboutUsScreen extends React.Component {
   static navigationOptions = {
-    drawerLabel: "About us ",
+    drawerLabel: "About us",
     drawerIcon: ({ tintColor }) => (
       <Image
         source={Icons.aboutIcon}
@@ -16,7 +16,7 @@ export default class AboutUsScreen extends React.Component {
   };
   render() {
     return (
-      <View s>
+      <View>
         <AboutusHeader />
       </View>
     );

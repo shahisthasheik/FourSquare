@@ -1,14 +1,16 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import SearchHeader from "../../components/headers/searchheader";
+import { withNavigation } from "react-navigation";
+import SearchButton from "../../components/buttons/searchbutton";
 import { scale } from "../../helpers/scale";
 import { Color } from "../../helpers/colors";
+import { Icons } from "../../assets/icons/index";
 
-//import Header from "../../components/headers/Header";
-
-export default class SearchScreen extends React.Component {
+class SearchScreen extends React.Component {
   static navigationOptions = {
     headerTitle: <SearchHeader />,
+    headerLeft: <SearchButton />,
     headerStyle: {
       backgroundColor: Color.brandPrimary,
       height: scale(112)
@@ -27,3 +29,5 @@ export default class SearchScreen extends React.Component {
     );
   }
 }
+
+export default withNavigation(SearchScreen);

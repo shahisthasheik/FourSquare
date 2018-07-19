@@ -9,13 +9,11 @@ import {
 import { scale } from "../helpers/scale";
 import { Color } from "../helpers/colors";
 import CreateScreens from "../components/createscreens";
-import Header from "../components/headers/header";
 import FilterScreen from "../screens/filter/filter";
 import SearchScreen from "../screens/search/search";
 import DetailScreen from "../screens/toppick/detail";
 import RatingScreen from "../screens/toppick/rating";
 import ReviewScreen from "../screens/toppick/review";
-import BackButton from "../components/buttons/backbutton";
 import AddReviewScreen from "../screens/toppick/addreview";
 import PhotoScreen from "../screens/toppick/photo";
 import FavoriteScreen from "../screens/drawerscreens/favorite";
@@ -65,21 +63,8 @@ const Navigations = createStackNavigator(
     Photo: {
       screen: PhotoScreen
     }
-  },
-  {
-    navigationOptions: {
-      headerTitle: <Header />,
-      headerBackImage: <BackButton />,
-      headerStyle: {
-        backgroundColor: Color.brandPrimary,
-        height: scale(80)
-      },
-      headerTintColor: "#fff",
-      headerTitleStyle: {
-        fontWeight: "bold"
-      }
-    }
   }
+
   // { headerMode: "none" }
 );
 const Drawer = DrawerNavigator(

@@ -12,6 +12,7 @@ import { withNavigation } from "react-navigation";
 import { scale } from "../../helpers/scale";
 import { Color } from "../../helpers/colors";
 import { Icons } from "../../assets/icons/index";
+import { text } from "../../components/const";
 
 // Make a component
 class FeedbackHeader extends React.Component {
@@ -31,7 +32,7 @@ class FeedbackHeader extends React.Component {
             alignItems: "center"
           }}
         >
-          <Text style={styles.textStyle}>Feedback</Text>;
+          <Text style={styles.textStyle}>{text.feedbackTitle}</Text>
         </View>
         <View>
           <View style={styles.filter}>

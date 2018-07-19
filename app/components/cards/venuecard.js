@@ -11,18 +11,22 @@ class VenueCard extends React.Component {
     let categories = item.categories.length > 0 ? item.categories[0] : null;
     let imgurl =
       categories && categories.icon && categories.icon.prefix
-        ? categories.icon.prefix + "64.png"
+        ? categories.icon.prefix + "bg_64.png"
         : null;
+    let itemid = item.id;
     return (
       <View>
         <Card>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("Detail")}
+            onPress={() =>
+              this.props.navigation.navigate("Detail", { data: itemid })
+            }
             style={{ flexDirection: "row" }}
           >
             <CardSection>
               <View style={styles.imageView}>
                 <Image
+                  // style={{ height: 100, width: 100 }}
                   source={{
                     uri: imgurl
                   }}

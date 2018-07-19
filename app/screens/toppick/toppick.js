@@ -12,7 +12,8 @@ class ToppickScreen extends React.Component {
           flex: 1
         }}
       >
-        <VenueCard />
+        <Text>top pick</Text>
+        {/* <VenueCard /> */}
       </View>
     );
   }
