@@ -8,12 +8,12 @@ import { scale } from "../../helpers/scale";
 class VenueCard extends React.Component {
   render() {
     const { item, details } = this.props;
-    let categories = item.categories.length > 0 ? item.categories[0] : null;
-    let imgurl =
-      categories && categories.icon && categories.icon.prefix
-        ? categories.icon.prefix + "bg_64.png"
-        : null;
-    let itemid = item.id;
+    // let categories = item.categories.length > 0 ? item.categories[0] : null;
+    // let imgurl =
+    //   categories && categories.icon && categories.icon.prefix
+    //     ? categories.icon.prefix + "bg_64.png"
+    //     : null;
+    let itemid = details.id;
     return (
       <View>
         <Card>
@@ -25,20 +25,56 @@ class VenueCard extends React.Component {
           >
             <CardSection>
               <View style={styles.imageView}>
-                <Image
-                  // style={{ height: 100, width: 100 }}
+                {/* <Image
+                  style={{
+                    height: 100,
+                    width: 100,
+                    marginTop: scale(15),
+                    marginLeft: scale(15)
+                  }}
                   source={{
                     uri: imgurl
                   }}
-                />
+                /> */}
               </View>
             </CardSection>
 
             <CardSection>
               <View style={styles.headerContentStyle}>
-                <Text>{item.name}</Text>
-                <Text>{categories.id}</Text>
-                <Text>{details.rating}</Text>
+                <View style={{ flex: 4 }}>
+                  <Text style={{ marginTop: scale(5) }}>{details.name}</Text>
+                </View>
+                <View style={{ flex: 2 }}>
+                  <View style={styles.rating}>
+                    <Text style={{ marginTop: scale(2) }}>
+                      {details.rating}
+                    </Text>
+                  </View>
+                </View>
+                <View style={{ flex: 4 }}>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={{ marginTop: scale(2) }}>
+                      {details.location && details.location.country
+                        ? details.location.country
+                        : null}
+                    </Text>
+                    <Text
+                      style={{ marginTop: scale(2), marginLeft: scale(10) }}
+                    >
+                      {details.price && details.price.currency
+                        ? details.price.currency
+                        : null}
+                    </Text>
+                  </View>
+                  <Text>
+                    {details.location && details.location.address
+                      ? details.location.address
+                      : null}
+                    {details.location && details.location.city
+                      ? details.location.city
+                      : null}
+                  </Text>
+                </View>
               </View>
             </CardSection>
           </TouchableOpacity>
@@ -59,6 +95,13 @@ const styles = StyleSheet.create({
   },
   imageView: {
     width: scale(113),
-    height: scale(113)
+    height: scale(113),
+    backgroundColor: "silver",
+    marginLeft: scale(10)
+  },
+  rating: {
+    height: scale(20),
+    width: scale(20),
+    backgroundColor: "green"
   }
 });

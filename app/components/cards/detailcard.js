@@ -23,9 +23,7 @@ class DetailCard extends React.Component {
     const { Data } = this.props;
     return (
       <ScrollView>
-        <View style={styles.image}>
-          <Text>{Data.rating}</Text>
-        </View>
+        <View style={styles.image}>{/* <Text>{Data.rating}</Text> */}</View>
         <View
           style={{
             flexDirection: "row",
